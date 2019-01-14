@@ -12,15 +12,15 @@ import Logo from '~/components/Logo.vue'
 export default {
   data() {
     return {
-      data: [1,2,3]
+      data: []
     }
   },
   async asyncData(ctx) {
-    // let res = await ctx.$axios.post('/search/city')
-    // console.log(res)
-    // return {
-    //   data: res.data.result
-    // }
+    let res = await ctx.$axios.post('/search/city')
+    console.log(res)
+    return {
+      data: res.data.result
+    }
   }
 }
 </script>
