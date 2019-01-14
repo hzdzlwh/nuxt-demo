@@ -31,6 +31,7 @@ async function start() {
       ctx.res.on('finish', resolve)
       nuxt.render(ctx.req, ctx.res, promise => {
         // nuxt.render passes a rejected promise into callback on error.
+        console.log(promise)
         promise.then(resolve).catch(reject)
       })
     })
